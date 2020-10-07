@@ -13,8 +13,8 @@ function onAdd(btn) {
 	renderTongToUI(tong);
 }
 
-function onMinus() {
-	window.event.preventDefault();
+function onMinus(e) {
+	e.preventDefault();
 	// var input1 = parseFloat(document.getElementById('input1').value);
 	// var input2 = parseFloat(document.getElementById('input2').value);
 	var [ tong, input1, input2 ] = returnAddOp();
