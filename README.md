@@ -74,3 +74,22 @@ Dat ten ham phai co y nghia va the hien dung chuc nang ma ham do xu ly
 - Camel Case: onAddDefaultFunction
 - C#: OnAddDefFunction
 - SQL: on_add_def_func
+
+5. Xu ly merge conflict
+
+- git pull ve de biet merge conflict o dau
+- nhung file bi conflict thi hien mau tim (C)
+- click vao nhung file do ->
+	- Accept Current Change: Giu thay doi cua minh
+	- Accept Incomming Change: Lay thay doi tu remote
+	- Accept Both Change: Giu ca 2 thay doi
+- Xu ly xogn thi bam (+) de stage change lai
+- git add .
+- git commit -m "ten commit"
+- git push
+
+6. Khi bi refusing to merge unrelated histories
+
+```bash
+git pull --allow-unrelated-histories
+```
