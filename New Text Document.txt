@@ -1,0 +1,8 @@
+var idTestTag = document.getElementsByClassName('idTest')[0];
+	console.log(idTestTag.childElementCount.length);
+	console.log(idTestTag.childNodes.length);
+	console.log(idTestTag.innerHTML);
+	console.log(idTestTag.outerHTML);
+	console.log(idTestTag.innerText);
+	console.log(idTestTag.parentElement);
+	console.log(idTestTag.nextSibling);

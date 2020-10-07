@@ -4,19 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css" />
     <script src="index.js"></script>
 
     <title>Document</title>
 </head>
 
 <body>
-    <!-- <h1 id="idTest">Thứ hai là ngày đầu tuần</h1> -->
-    <div class="idTest" onclick="alertToWindow()">
-        <h1>Thứ hai là ngày đầu tuần</h1>
-    </div>
-    <h1>Thứ ba là ngày đầu tuần</h1>
-    <h1>Thứ tư là ngày đầu tuần</h1>
-    <h1>Thứ năm là ngày đầu tuần</h1>
+    <form class="caculator-container">
+
+        <div class="inp-top">
+            <label class="text-blue"><b>Input1</b></label>           
+            <input id="number1" type="text">
+        </div>
+        <div class="inp-dow"></div>   
+            <label class="text-blue"><b>Input2</b></label>
+            <input id="number2" type="text">
+        </div>
+        <div class="btn">
+            <button class="btn-blue" onClick="operate('+')">+</button>
+            <button class="btn-blue" onClick="operate('-')">-</button>
+            <button class="btn-blue" onClick="operate('*')">*</button>
+            <button class="btn-blue" onClick="operate('/')">/</button>
+        </div>
+        <div class="inp-bottom">
+            <label class="text-blue"><b>Ket qua</b></label>
+            <input id="number3" type="text">
+        </div>
+    </form>
 </body>
 
 </html>
