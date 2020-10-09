@@ -107,7 +107,7 @@ Là phạm vi mà chương trình nhìn thấy 1 biến.
 ### 2. Scope Chain
 Khi chương trình không tìm thấy 1 biến trong execution context hiện tại thì nó sẽ tìm ở môi trường ngoài nó (ra function bên ngoài, hoặc ra global context)
 
-![Scope Chain](./imgs/scope-chain.PNG)
+![Scope Chain](./imgs/scope-chain.png)
 
 ### 3. Object
 #### 3.1. Định nghĩa
