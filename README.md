@@ -179,6 +179,45 @@ Khi đó nếu thor.chan để lấy thuộc tính chan thì chương trình s�
 
 ![Prototype Chain](./imgs/prototype_chain.png)
 
+#### 3.4. Lưu ý về function lồng trong function (Closure)
+
+Đối với trường hợp sử dụng function lồng trong function thuật ngữ gọi là Closure.
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions>
+
+1 hàm là closure thì sẽ có thể truy cập biến của hàm chứa nó.
+
+Cách sử dụng là như ví dụ bên dưới: Khai báo func2 lồng trong func1 rồi return func2.
+
+Sau đó muốn gọi func2 thì gọi bằng cách func1()();
+
+Ví dụ bên dưới là có parameter truyền vào.
+
+```js
+function outside(x) {
+  function inside(y) {
+    return x + y;
+  }
+  return inside;
+}
+fn_inside = outside(3); // Think of it like: give me a function that adds 3 to whatever you give
+                        // it
+result = fn_inside(5); // returns 8
+
+result1 = outside(3)(5); // returns 8
+```
+
+*** Phần này giải thích technical hơn xíu về cơ chế của closure (đọc khi nào trình cao hơn rồi sẽ hiểu)
+
+Extra1: Lý giải về vấn đề vì sao func2 (closure ở trong func1) vẫn có thể truy cập biến của func1 dù execution context của func1 đã được pop khỏi stack.
+
+Trong ví dụ ở trên thì ta sẽ thấy là outside() được gọi 1 lần để gán vào fn_inside. Về mặt lý thuyết khi gọi xong outside() thì execution context của outside sẽ không còn nữa nhưng các biến khai báo trong outside vẫn còn nằm trong scope chain của outside và được lưu vào địa chỉ bộ nhớ (RAM).
+
+Cơ chế dọn rác (Garbage Collection) của JS khi dọn dẹp biến lưu trữ trong bộ nhớ là: chỉ xóa địa chỉ biến khi địa chỉ biến đó hoàn toàn ko có code nào tham chiếu tới. Ở đây mình gọi tiếp fn_inside(5) tức nó đã tham chiếu tới hàm inside() trong outside(). Do đó các biến x, y của hàm này vẫn có thể sử dụng được.
+
+Extra2: Closure được sử dụng khi nào.
+
+Thực tế thì closure khá là private vì chỉ có hàm bao nó mới gọi và sử dụng được nó. Do đó nó được sử dụng để làm 1 helper method (phương thức hỗ trợ) cho việc tính toán trong hàm chính (khi cần tính toán phức tạp).
+
 **BÀI VỀ NHÀ***
 
 Làm 1 form input nhận vào giá trị trường, khoa, tên sinh viên, tuổi sinh viên. Khi nhập xong bấm submit thì bên table sẽ hiển thị đủ 4 trường thông tin + 1 cột số thứ tự.
