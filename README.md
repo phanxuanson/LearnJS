@@ -98,3 +98,89 @@ Dat ten ham phai co y nghia va the hien dung chuc nang ma ham do xu ly
 ```bash
 git pull --allow-unrelated-histories
 ```
+
+## Day 3: Scope + Scope Chain + Object + Prototype Chain
+
+### 1. Scope
+Là phạm vi mà chương trình nhìn thấy 1 biến.
+
+### 2. Scope Chain
+Khi chương trình không tìm thấy 1 biến trong execution context hiện tại thì nó sẽ tìm ở môi trường ngoài nó (ra function bên ngoài, hoặc ra global context)
+
+![Scope Chain](./imgs/scope-chain.PNG)
+
+### 3. Object
+#### 3.1. Định nghĩa
+Tất cả trong javascript đều là object (trừ kiểu dữ liệu nguyên thủy string, number)
+Do đó function cũng là obj nên mới khai báo kiểu function lồng trong function được. Ví dụ thế này:
+
+```js
+function func1() {
+	var b = 'b';
+	function func2() {
+		var c = 'c';
+		console.log(a, b, c, d);
+	}
+	func2();
+}
+```
+
+#### 3.2. Cách khai báo Object trong JS
+Có 2 cách khai báo trong ES5 (ES6 có thêm 1 cách nữa)
+
+C1. Object Literals
+
+```js
+var Cho = {
+  chan: 4,
+  chay: function() {
+    console.log('Cho Chay!')
+  }
+}
+```
+
+C2. Khai báo bằng Constructor Function
+
+```js
+function Cho() {
+	this.chan = 4;
+	// this.chay = function() {
+	// 	console.log('cho chay!');
+	// };
+}
+```
+
+>*** Note: - Khi khai báo bằng Constructor Function thì sẽ sử dụng được prototype để thực hiện kế thừa trong JS
+>
+>```js
+>Cho.prototype.sua = function() {console.log('Gau Gau')}
+>```
+>
+>          - Khi khai báo hàm trong prototype kiểu này thì sẽ tiết kiệm bộ nhớ lưu trữ vì 1 hàm này sẽ sử dụng chung cho tất cả instance được khởi tạo bởi object này.
+>          - Giả sử tạo 10.000 instances bằng new Cho() thì chỉ có 1 hàm sua() thôi nếu dùng prototype. Còn nếu tạo bằng Object literals xong rồi dùng Object.create(Cho) thì cũng có thể tạo được 10.000 instances nhưng hàm chay() khai báo trong đó sẽ bị nhân lên 10k lần -> tốn dung lượng lưu trữ.
+
+#### 3.3. Sử dụng prototype để kế thừa và Prototype Chain trong JS
+
+Cách kế thừa 1 lớp khác sử dụng prototype
+
+```js
+function ChoVN () {
+  var mauLong = 'vang'
+}
+
+ChoVN.prototype = new Cho();
+
+var thor = new ChoVN()
+```
+
+Khi kế thừa bằng cách này thì lớp ChoVN sẽ kế thừa thuộc tính và phương thức từ lớp Cho.
+
+Khi đó nếu thor.chan để lấy thuộc tính chan thì chương trình sẽ tìm theo 1 cái gọi là Prototype Chain để truy ngược các lớp cha tìm xem có thuộc tính đó ko.
+
+![Prototype Chain](./imgs/prototype_chain.png)
+
+**BÀI VỀ NHÀ***
+
+Làm 1 form input nhận vào giá trị trường, khoa, tên sinh viên, tuổi sinh viên. Khi nhập xong bấm submit thì bên table sẽ hiển thị đủ 4 trường thông tin + 1 cột số thứ tự.
+
+Gợi ý: Sử dụng biến toàn cục để lưu mảng sinh viên. Khi submit form thì lưu giá trị dạng obj vào mảng này rồi có hàm thêm 1 dòng mới vào table hiện tại.
