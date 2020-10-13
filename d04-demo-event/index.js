@@ -1,15 +1,5 @@
 window.onload = function() {};
 
-$(function() {
-	// $('#btnCancel').click(function(evt) {
-	// 	console.log(evt);
-	// });
-
-	$(document).on('click', '#btnCancel', function(evt) {
-		console.log(evt);
-	});
-});
-
 function testEventFunc(e) {
 	e.preventDefault();
 	console.log('Vi Du Ham Nay de submit');
@@ -43,6 +33,7 @@ function printEventOfKeyboard(e) {
 
 		// Note: Cu phap Jquery
 		// $(btn).on('click', deleteRow);
+		// $(document).on('click', '.deleteRowBtn', deleteRow) // Dung cai nay moi dung tinh than cua jQuery
 		// $(btn).click(deleteRow);
 	}
 
