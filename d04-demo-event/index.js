@@ -16,8 +16,9 @@ function printEventOfKeyboard(e) {
                     <td>${e.target.value}</td>
                     <td>${e.target.value}</td>
                     <td>
-                        <button onclick="deleteRow(event)" style="display:none">Xoa</button>
-                        <button class="deleteRowBtn">Xoa</button>
+						<button class="btn btn-danger" onclick="deleteRow(event)" style="display:none">x</button>
+						<button class="btn btn-warning editRowBtn">Edit</button>
+                        <button class="btn btn-danger deleteRowBtn">x</button>
                     </td>`;
 
 	var tBody = document.getElementById('tbodyToWrite');
