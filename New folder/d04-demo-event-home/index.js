@@ -35,7 +35,7 @@ function testEventFunc(e) {
 
 //     // Note: Cu phap Jquery
 //     // $(btn).on('click', deleteRow);
-//     // $(document).on('click', '.deleteRowBtn', deleteRow) // Dung cai nay moi dung tinh than cua jQuery
+//     // $(document).on('click', '.deleteRowBtn', deleteRow) // Dung cai nay moi dung tinh than cua jQuery // parentSelector.on('sukien', 'child mang su kien', callback xu ly su kien) https://api.jquery.com/on/
 //     // $(btn).click(deleteRow);
 //   }
 
@@ -60,7 +60,7 @@ function AddData(e) {
 	let tbodyToWrite = document.getElementById('tbodyToWrite');
 
 	let row = document.createElement('tr');
-	tr.innerHTML = `<td>${e.target.value}</td>
+	row.innerHTML = `<td>${e.target.value}</td>
            <td>${e.target.value}</td>
            <td>${e.target.value}</td>
            <td>
@@ -69,10 +69,16 @@ function AddData(e) {
              <button class="btn btn-danger deleteRowBtn">x</button>
            </td>`;
 	tbodyToWrite.appendChild(row);
-	document.getElementById("frmSubmit").reset();
+  document.getElementById("frmSubmit").reset();
+
+  var deleteElHTMLColl = document.getElementsByClassName('deleteRowBtn');
+  for (row of deleteElHTMLColl) {
+    row.onclick = deleteRow;
+  }
 }
 
 function deleteRow(e) {
+  console.log(e);
   var eventEl = e.target;
   var parent2 = eventEl.parentNode.parentNode;
   parent2.remove();
