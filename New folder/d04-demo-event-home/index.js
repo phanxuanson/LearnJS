@@ -60,12 +60,12 @@ function AddData(e) {
 	let tbodyToWrite = document.getElementById('tbodyToWrite');
 
 	let row = document.createElement('tr');
-	row.innerHTML = `<td>${e.target.value}</td>
-           <td>${e.target.value}</td>
-           <td>${e.target.value}</td>
+	row.innerHTML = `<td>${name}</td>
+           <td>${phone}</td>
+           <td>${address}</td>
            <td>
              <button class="btn btn-danger" onclick="deleteRow(event)" style="display:none">x</button>
-             <button class="btn btn-warning editRowBtn">Edit</button>
+             <button class="btn btn-warning editRowBtn" onclick="onEdit(this)">Edit</button>
              <button class="btn btn-danger deleteRowBtn">x</button>
            </td>`;
 	tbodyToWrite.appendChild(row);
@@ -75,6 +75,13 @@ function AddData(e) {
   for (row of deleteElHTMLColl) {
     row.onclick = deleteRow;
   }
+}
+function onEdit(td){
+  selectedRow = td.parentElement.parentElement;
+  document.getElementById("fullname").value = selectedRow.cell[0].innerHTML;
+  document.getElementById("phone-number").value = selectedRow.cell[1].innerHTML;
+  document.getElementById("email").value = selectedRow.cell[2].innerHTML;
+  
 }
 
 function deleteRow(e) {

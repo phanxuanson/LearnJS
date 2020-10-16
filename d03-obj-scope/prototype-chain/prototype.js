@@ -24,3 +24,7 @@ ChoVNLongNgan.prototype = new ChoVN();
 var loki = new ChoVNLongNgan();
 
 loki.sua();
+
+
+// dog new 
+

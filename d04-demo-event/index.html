@@ -2,66 +2,58 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="./index.js"></script>
-    <title>Document</title>
-    <style>
-        body {
-            padding: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+  <title>Document</title>
+  <style>
+    body {
+      padding: 20px;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="row">
-        <div class="col-md-4 col-lg-4">
-            <form id="frmSubmit">
-                <div class="form-group">
-                    <label for="fullname">Full Name:</label>
-                    <input type="text" class="form-control" placeholder="Enter FullName" id="fullname"
-                        onkeyup="printEventOfKeyboard(event)">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address:</label>
-                    <input name="email" type="email" class="form-control" placeholder="Enter email" id="email">
-                </div>
-                <div class="form-group">
-                    <label for="diachi">Email Address:</label>
-                    <input name="diachi" type="text" class="form-control" placeholder="Enter Dia chi" id="diachi">
-                </div>
-
-                <input id='btnSubmit' type="submit" class="btn btn-primary" onclick="testEventFunc(event)"
-                    value="Submit">
-                <input id='btnCancel' type="button" class="btn btn-warning" value="Cancel">
-            </form>
+  <div class="row">
+    <div class="col-md-4 col-lg-4">
+      <form id="frmSubmit">
+        <div class="form-group">
+          <label for="fullname">Full Name:</label>
+          <input name="fullname" type="text" class="form-control" placeholder="Enter FullName" id="fullname"
+            onkeyup="printEventOfKeyboard(event)">
         </div>
-        <div class="col-md-8 col-lg-8">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                        <th>Email</th>
-                        <th>Thao Tac</th>
-                    </tr>
-                </thead>
-                <tbody id="tbodyToWrite">
-                    <tr>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>john@example.com</td>
-                        <td></td>
-                    </tr>
-
-                </tbody>
-            </table>
+        <div class="form-group">
+          <label for="email">Phone Number</label>
+          <input name="phone-number" type="number" class="form-control" placeholder="Phone Number" id="phone-number">
         </div>
+        <div class="form-group">
+          <label for="address">Email Address:</label>
+          <input name="address" type="text" class="form-control" placeholder="Enter Dia chi" id="address" onkeyup="printEventOfKeyboard(event)">
+        </div>
+
+        <input class="button" type="button" value=" Add " onclick="AddData(e)">
+        <input id='btnCancel' type="button" class="btn btn-warning" value="Cancel">
+      </form>
     </div>
+    <div class="col-md-8 col-lg-8">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Thao Tac</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyToWrite">
+        </tbody>
+      </table>
+    </div>
+  </div>
 </body>
 
 </html>
