@@ -1,7 +1,7 @@
 # JS Note
 
 ## 1. DOM basic
-
+<https://www.w3schools.com/cssref/css_selectors.asp>
 <https://www.w3schools.com/js/js_htmldom.asp>
 
 1.1 The script dat o tren head va o body
@@ -223,3 +223,29 @@ Thực tế thì closure khá là private vì chỉ có hàm bao nó mới gọi
 Làm 1 form input nhận vào giá trị trường, khoa, tên sinh viên, tuổi sinh viên. Khi nhập xong bấm submit thì bên table sẽ hiển thị đủ 4 trường thông tin + 1 cột số thứ tự.
 
 Gợi ý: Sử dụng biến toàn cục để lưu mảng sinh viên. Khi submit form thì lưu giá trị dạng obj vào mảng này rồi có hàm thêm 1 dòng mới vào table hiện tại.
+
+## Day 05: METHODS USING ON ARRAYS
+
+### 1. Array.prototype.filter()
+
+```js
+var numArr = [1,2,3,4,5,6,7,8,9,10, 'a', 'b', 'c', 'd']
+var filterArrNum = numArr.filter((el) => {return typeof el ==='number'})
+filterArrNum.filter(el => el%2)
+filterArrNum.filter(el => el%2===0)
+
+var filterArrStr = numArr.filter((el) => {return typeof el ==='string'})
+```
+
+### 2. Lưu ý khi filter hay copy mảng (deep copy hay shallow copy - reference)
+
+```js
+filterArrNum[0] = 100000 //[100000, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+var copyArr = [...filterArrNum] //Sử dụng spread (ES6) để deep copy mảng
+
+copyArr[0] = 'bad' //["bad", 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+```
+
+### 3. Array.prototype.find()
