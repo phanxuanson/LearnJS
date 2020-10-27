@@ -264,8 +264,72 @@ const companies = [
 companies.filter(el => el.category === 'Finance')
 
 companies[0].hasOwnProperty('name') //true
+
+
 ```
 
 
 
 ### 3. Array.prototype.find()
+
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find>
+
+>**Syntax**
+>arr.find(callback(element[, index[, array]])[, thisArg])
+
+```js
+var todoList = [{name: 'Lam viec so 1', status: 1, id: 1}, {name: 'Lam viec so 2', status: 0, id: 2}]
+
+todoList.find(todo => todo.id == 1) // -> object 1
+
+todoList.find(todo => todo.id == 3) // -> undefined
+```
+
+Bên cạnh find() trả về phần tử mảng tìm được (hoặc undefined nếu ko tìm được) thì có hàm findIndex() trả về index (vị trí) của phần tử trong mảng.
+findIndex() thì trả về phần tử đầu tiên tìm được (chứ ko phải là nhiều phần tử tìm được)
+
+```js
+companies.findIndex(nv => nv.category === 'Finance') // Trả về là 0
+```
+
+### 4. Array.prototyp.push()
+
+Chú ý thì push trả về độ dài của mảng
+
+```js
+var newArr = numArr.push('asdf')
+newArr // 16 chứ ko phải là mảng như [1,2,3,5]
+```
+
+### 5. Array.prototype.splice()
+
+Xóa phần tử ở vị trí index trong mảng, hoặc nếu số phần tử cần xóa = 0 thì sẽ insert thêm phần tử vào thông qua arg thứ 3 truyền vào
+
+```js
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+// inserts at index 1
+console.log(months); // ["Jan", "Feb", "March", "April", "June"] Feb được insert vào
+```
+
+```js
+var idx = companies.findIndex(nv => nv.category === 'Retail')
+companies.splice(idx, 1)
+```
+
+### 6. Tổng hợp những hàm ko quan trọng lắm
+
+```js
+companies.forEach(el => console.log(el))
+
+'Nguyen Quang Hieu'.includes('Nguyen')
+
+'Nguyen Quang Hieu'.indexOf('Quang') // 7 || Nếu trả về -1 tức là ko có phần tử trong mảng
+
+companies.sort((a,b) => a.start - b.start) // Sort từ thấp đến cao theo object
+
+companies.sort((a,b) => b.start - a.start) 
+
+```
+
+### 7. Array.prototyp.map() + Array.prototype.reduce()
