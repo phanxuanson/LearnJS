@@ -14,6 +14,10 @@
     body {
       padding: 20px;
     }
+
+    .error {
+      color: red;
+    }
   </style>
 </head>
 
@@ -23,18 +27,21 @@
       <form id="frmSubmit">
         <div class="form-group">
           <label for="fullname">Full Name:</label>
-          <input name="fullname" type="text" class="form-control" placeholder="Enter FullName" id="fullname">
+          <input required name="fullname" type="text" class="form-control" placeholder="Enter FullName" id="fullname">
+          <span class="fullname-error error"></span>
         </div>
         <div class="form-group">
-          <label for="email">Phone Number</label>
-          <input name="phone-number" type="number" class="form-control" placeholder="Phone Number" id="phone-number">
+          <label for="phone-number">Phone Number</label>
+          <input required name="phone-number" type="number" class="form-control" placeholder="Phone Number" id="phone-number">
+          <span class="fullnumber-error error"></span>
         </div>
         <div class="form-group">
           <label for="address">Email Address:</label>
           <input name="address" type="text" class="form-control" placeholder="Enter Dia chi" id="address">
+          <span class="address-error error"></span>
         </div>
 
-        <input class="btn btn-primary btn-block" type="button" value=" Add " onclick="AddData(event)">
+        <input id="btnAdd" class="btn btn-primary btn-block" type="button" value=" Add " onclick="AddData(event)">
         <input id='btnCancel' type="button" class="btn btn-secondary btn-block" value="Cancel">
       </form>
     </div>
