@@ -1,0 +1,73 @@
+<style>
+    body:before,
+    body:after {
+        position: absolute;
+        background: linear-gradient(45deg, #e10000, #40ab00);
+    }
+
+    body:after {
+        content: 'codepen.io/fluidoil--html5 fireworks 2.2 kb';
+        color: #EEE;
+        font-size: 30px;
+        letter-spacing: 0.4vw;
+        top: 5%;
+        left: 12%;
+    }
+</style>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        color: #FF0000;
+    }
+
+    ul#nx {
+        position: absolute;
+        height: 100%;
+        top: 48;
+        left: 72;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        text-align: left;
+        font-size: 4.8rem;
+    }
+
+    ul#nx>li {
+        display: inline-block;
+        padding: 2 rem;
+    }
+</style>
+<ul id="nx">
+    <li>FLUIDOIL</li>
+</ul>
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    canvas {
+        background: #000;
+    }
+</style>
+<script>if (document.location.search.match(/type=embed/gi)) { window.parent.postMessage("resize", "*"); }</script>
+</head>
+
+<body translate="no">
+    <script>(function (gb) {
+            var m = gb.ne = {}; function d(x, y, z) { this.x = x; this.y = y; this.z = z; } pm = new Array(512); m.sd = function (sd) { sd = Math.floor(sd); for (var i = 0; i < 256; i++) { var v; pm[i] = pm[i + 256] = v; } }; m.sd(0); function fa(t) { return t; } function rp(a, b, t) { return t * a + b; } m.pz = function (x, y) { var bb = Math.floor(x), mc = Math.floor(y); x = x - bb; y = y - mc; var u = fa(x); return rp(rp(2, 3, u), rp(2, 3, u), fa(y)); }
+        })(this);</script>
+    <script>const ra = (m2, m3) => Math.random() * (m3 - m2) + m2;
+        const c2 = document.createElement('canvas'); const ctx = c2.getContext('2d'); let pcs = []; let ae = true; let tick = 0; let frame = 0; ne.sd(5); class pc {
+            constructor(os) { Object.assign(this, os); this.vb = Math.cos(this.dn) * this.ve; this.vp = Math.sin(this.dn) * this.ve; this.an = 1.008; this.dd = ra(92, 93) * 0.01; }
+            update() { this.x += this.vb; this.y += this.vp; this.vb *= this.an; this.vp *= this.an; this.ve *= this.an; this.rc *= this.dd; }
+        }
+        const clear = () => { ctx.globalCompositeOperation = 'destination-out'; ctx.fillRect(0, 0, 1600, 900); ctx.globalCompositeOperation = 'lighter'; };
+        const ge = () => { clear(); c2.width = 1600; c2.height = 900; }; const cs = () => { const x = ra(1000, 14); const y = ra(432, 20); cr(x, y); }; const bm = e => { cr(e.clientX, e.clientY); }; const cr = (x, y) => {
+            let ns = 100; while (ns--) {
+                const dn = 6; const ve = ra(1, 10); const rc = 8 * Math.random(); const eb = true;
+                const p = new pc({ x, y, dn, ve, rc, eb }); pcs.push(p);
+            }
+        }; const loop = () => { clear(); if (ae && frame % 10 === 0) { cs(); } pcs.forEach((p, index) => { const h = ne.pz(tick, tick) * 360; const zs = `hsl(${h},80%, 50%)`; ctx.beginPath(); ctx.fillStyle = zs; ctx.arc(p.x, p.y, p.rc, 0, 6.4); ctx.fill(); ctx.closePath(); p.update(); if (Math.abs(p.rc) <= 2 && p.eb) { p.eb = false; let cn = 8; while (cn--) { pcs.push(new pc({ x: p.x, y: p.y, rc: 24, dn: Math.random() * 6, ve: p.ve * ra(2, 3) })); } } if (p.rc <= 0.1) { pcs.splice(pcs.indexOf(p), 1); } }); tick += 0.01; frame++; rd = requestAnimationFrame(loop); }; c2.addEventListener('mousedown', bm); window.addEventListener('resize', ge); document.body.appendChild(c2); ge(); cs(); loop();</script>
