@@ -16,7 +16,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="lock.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"
       rel="stylesheet"
@@ -65,9 +65,9 @@
       src="https://kit.fontawesome.com/04a80b41bb.js"
       crossorigin="anonymous"
     ></script>
-
+    <script src="index.js"></script>
     <div id="main">
-      <div
+      <nav
         class="navbar-absolute fixed-top navbar-transparent navbar navbar-expand-lg"
       >
         <div class="container">
@@ -81,6 +81,7 @@
             class="navbar-toggler"
             data-toggle="collapse"
             type="button"
+            class="btn-button"
           >
             <span class="navbar-toggler-bar navbar-kebab"></span
             ><span class="navbar-toggler-bar navbar-kebab"></span
@@ -94,92 +95,98 @@
                 >
               </li>
               <li class="nav-item">
-                <a
-                  aria-current="page"
-                  class="nav-link active"
-                  href="#/auth/login"
+                <a class="nav-link" href="#/auth/login"
                   ><i class="fas fa-sign-in-alt"></i>Login</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#/auth/lock-screen"
-                  ><i class="fas fa-lock"></i>Lock</a
+                <a class="nav-link" href="#/admin/user-profile"
+                  ><i class="fas fa-lock"></i>User</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#/auth/lock-screen"
-                  ><i class="fas fa-history"></i>Reset</a
+                <a
+                  class="nav-link active"
+                  href="#/auth/lock-screen"
+                  aria-current="page"
+                  ><i class="fas fa-history"></i>Lock</a
                 >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="javascript:void(0);"
+                  onclick="myFunction()"
+                  aria-current="page"
+                  ><i class="fas fa-bars"></i
+                ></a>
               </li>
             </ul>
           </div>
         </div>
-      </div>
+      </nav>
       <div class="wrapper wrapper-full-page">
         <div class="full-page section-image">
-          <div class="login-page">
+          <div class="lock-page">
             <div class="container">
-              <div class="row">
-                <div class="form-mian-column col-md-6 col-lg-4">
-                  <form class="form">
-                    <div class="card-login card">
-                      <div class="card-header">
-                        <h3 class="header text-center">Login</h3>
-                      </div>
-                      <div class="card-body">
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">
-                              <i class="fas fa-user"></i>
-                            </span>
-                            <input
-                              placeholder="First Name..."
-                              type="text"
-                              class="form-control"
-                            />
-                          </div>
-                        </div>
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">
-                              <i class="fas fa-lock"></i>
-                            </span>
-                            <input
-                              placeholder="Password"
-                              type="password"
-                              class="form-control"
-                            />
-                          </div>
-                        </div>
-                        <br />
-                        <div class="form-group">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input
-                                type="checkbox"
-                                class="form-check-input"
-                                value=""
-                                checked=""
-                              />
-                              <span class="form-check-sign"></span>
-                              "Subscribe to newsletter"
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card-footer">
-                        <a
-                          href=""
-                          class="btn-round mb-3 btn btn-warning btn-block"
-                          >Get Started</a
-                        >
-                      </div>
+              <div class="ml-auto mr-auto col-md-6 col-lg-4">
+                <div class="card-lock text-center card">
+                  <div class="card-header">
+                    <img src="images/joe-gardner-2.76ff47ae.jpg" />
+                  </div>
+                  <div class="card-body">
+                    <h4 class="card-title">Joe Gardner</h4>
+                    <div class="form-group">
+                      <input
+                        placeholder="Enter Password.."
+                        autocomplete="off"
+                        type="password"
+                        class="form-control"
+                      />
                     </div>
-                  </form>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#pablo" class="btn-round btn btn-outline-default"
+                      >Unlock</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
+            <div
+              class="full-page-background"
+              style="
+                background-image: url('/paper-dashboard-pro-react/static/media/bruno-abatti.80954654.jpg');
+              "
+            ></div>
           </div>
+          <footer class="footer">
+            <div class="container-fluid">
+              <div class="row">
+                <nav class="footer-nav">
+                  <ul>
+                    <li>
+                      <a href="https://www.creative-tim.com">Creative Tim</a>
+                    </li>
+                    <li><a href="https://blog.creative-tim.com">Blog</a></li>
+                    <li>
+                      <a
+                        href="https://www.creative-tim.com/license"
+                        target="_blank"
+                        >Licenses</a
+                      >
+                    </li>
+                  </ul>
+                </nav>
+                <div class="credits ml-auto">
+                  <span class="copyright"
+                    >© 2020, made with <i class="fa fa-heart heart"></i> by
+                    Creative Tim</span
+                  >
+                </div>
+              </div>
+            </div>
+          </footer>
         </div>
       </div>
     </div>

@@ -520,7 +520,57 @@ textarea {
   border: 0;
   background-color: inherit;
 }
-
+.full-page .footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.full-page > .footer {
+  z-index: 4;
+}
+.footer {
+  padding: 24px 0;
+}
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.footer nav {
+  display: inline-block;
+  padding-left: 20px;
+}
+.footer ul {
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer ul li {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+}
+.footer ul li a {
+  color: inherit;
+  padding: 0.5rem;
+  font-size: 0.8571rem;
+  text-transform: uppercase;
+}
+.footer .copyright {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #fff;
+  padding-right: 20px;
+}
+.heart {
+  color: #eb5e28;
+}
 *,
 :after,
 :before {
