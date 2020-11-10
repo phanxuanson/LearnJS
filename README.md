@@ -348,3 +348,12 @@ companies.sort((a, b) => b.start - a.start);
 
 <https://mockapi.io/>
 <https://bootsnipp.com/snippets/vl4R7>
+
+## DAY 08 - REACT INTRO
+
+```bash
+npx create-react-app d08-react-app
+# cd vào thư mục dự án
+npm i --save redux@latest # Sau khi install với --save thì package.json sẽ có thư viện này trong dependencies
+
+```
