@@ -357,3 +357,16 @@ npx create-react-app d08-react-app
 npm i --save redux@latest # Sau khi install với --save thì package.json sẽ có thư viện này trong dependencies
 
 ```
+
+Cách reset HARD về lại lần commit trước
+
+```bash
+# list ra các thay đổi
+git reflog
+
+# chọn HEAD để reset về (ví dụ reset về head trước đó)
+git reset --hard HEAD~1
+
+# reset ve head với tên cụ thể
+git reset --hard HEAD@{1}
+```
