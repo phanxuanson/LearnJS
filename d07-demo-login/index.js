@@ -1,8 +1,8 @@
 function myFunction() {
-  var x = document.getElementsByClassName("navbar-toggler");
-  if (x.className === "btn-button") {
-    x.className += " responsive";
-  } else {
-    x.className = "btn-button";
-  }
+    var x = document.getElementsByClassName("navbar-toggler");
+    if (x.class === "btn-button") {
+        x.class += " responsive";
+    } else {
+        x.class = "btn-button";
+    }
 }

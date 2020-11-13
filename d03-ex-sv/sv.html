@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -12,55 +14,73 @@
     <script src="./err.js"></script>
     <title>Document</title>
     <style>
-        .error {
-            color: red;
-            display: block;
-        }
+      .error {
+        color: red;
+        display: block;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="row">
-        <div class="col-md-4 col-lg-4">
-            <form onsubmit="return myFunction()" id="frmSV">
-                <div class="form-group">
-                    <label for="truong">Trường</label>
-                    <input type="text" class="form-control" placeholder="Trường" id="truong">
-                </div>
-                <div class="form-group">
-                    <label for="khoa">Khoa</label>
-                    <input type="text" class="form-control" placeholder="Khoa" id="khoa">
-                </div>
-                <div class="form-group">
-                    <label for="sinhvien">Tên</label>
-                    <input type="text" class="form-control" placeholder="Tên Sinh Viên" id="sinhvien">
-                    
-                    
-                </div>
-                <div class="form-group">
-                    <label for="tuoi">Tuổi</label>
-                    <input type="number" class="form-control" placeholder="Tuổi" id="tuoi">
+      <div class="col-md-4 col-lg-4">
+        <form onsubmit="return myFunction()" id="frmSV">
+          <div class="form-group">
+            <label for="truong">Trường</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Trường"
+              id="truong"
+            />
+          </div>
+          <div class="form-group">
+            <label for="khoa">Khoa</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Khoa"
+              id="khoa"
+            />
+          </div>
+          <div class="form-group">
+            <label for="sinhvien">Tên</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Tên Sinh Viên"
+              id="sinhvien"
+            />
+          </div>
+          <div class="form-group">
+            <label for="tuoi">Tuổi</label>
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Tuổi"
+              id="tuoi"
+            />
+          </div>
 
-                </div>
-
-
-                <button type="submit" class="btn btn-primary" onclick="myFunction">Submit</button>
-            </form>
-        </div>
-        <div class="col-md-8 col-lg-8">
-            <table id="list" class="table table-striped">
-                <thead>s
-                    <tr>
-                        <th>Trường</th>
-                        <th>Khoa</th>
-                        <th>Tên</th>
-                        <th>Tuổi</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </div>
+          <button type="submit" class="btn btn-primary" onclick="myFunction">
+            Submit
+          </button>
+        </form>
+      </div>
+      <div class="col-md-8 col-lg-8">
+        <table id="list" class="table table-striped">
+          <thead>
+            s
+            <tr>
+              <th>Trường</th>
+              <th>Khoa</th>
+              <th>Tên</th>
+              <th>Tuổi</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>

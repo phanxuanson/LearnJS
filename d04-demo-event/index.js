@@ -1,8 +1,8 @@
 window.onload = function() {};
 
 function testEventFunc(e) {
-  e.preventDefault();
-  console.log('Vi Du Ham Nay de submit');
+    e.preventDefault();
+    console.log('Vi Du Ham Nay de submit');
 }
 
 // function printEventOfKeyboard(e) {
@@ -13,13 +13,13 @@ function testEventFunc(e) {
 
 //   // Cach 1 dua deleteRow thanh callback cua onclick trong button tag
 //   tr.innerHTML = `<td>${e.target.value}</td>
- //          <td>${e.target.value}</td>
-   //        <td>${e.target.value}</td>
-    //       <td>
-     //        <button class="btn btn-danger" onclick="deleteRow(event)" style="display:none">x</button>
-      //       <button class="btn btn-warning editRowBtn">Edit</button>
-        //     <button class="btn btn-danger deleteRowBtn">x</button>
-          // </td>`;
+//          <td>${e.target.value}</td>
+//        <td>${e.target.value}</td>
+//       <td>
+//        <button class="btn btn-danger" onclick="deleteRow(event)" style="display:none">x</button>
+//       <button class="btn btn-warning editRowBtn">Edit</button>
+//     <button class="btn btn-danger deleteRowBtn">x</button>
+// </td>`;
 
 //   var tBody = document.getElementById('tbodyToWrite');
 //   tBody.append(tr);
@@ -53,14 +53,14 @@ function testEventFunc(e) {
 // }
 
 function AddData(e) {
-	let name = document.getElementById("fullname").value;
-	let phone = document.getElementById("phone-number").value;
-	let address = document.getElementById("address").value;
+    let name = document.getElementById("fullname").value;
+    let phone = document.getElementById("phone-number").value;
+    let address = document.getElementById("address").value;
 
-	let tbodyToWrite = document.getElementById('tbodyToWrite');
+    let tbodyToWrite = document.getElementById('tbodyToWrite');
 
-	let row = document.createElement('tr');
-	tr.innerHTML = `<td>${e.target.value}</td>
+    let row = document.createElement('tr');
+    tr.innerHTML = `<td>${e.target.value}</td>
            <td>${e.target.value}</td>
            <td>${e.target.value}</td>
            <td>
@@ -68,12 +68,12 @@ function AddData(e) {
              <button class="btn btn-warning editRowBtn">Edit</button>
              <button class="btn btn-danger deleteRowBtn">x</button>
            </td>`;
-	tbodyToWrite.appendChild(row);
-	document.getElementById("frmSubmit").reset();
+    tbodyToWrite.appendChild(row);
+    document.getElementById("frmSubmit").reset();
 }
 
 function deleteRow(e) {
-  var eventEl = e.target;
-  var parent2 = eventEl.parentNode.parentNode;
-  parent2.remove();
+    var eventEl = e.target;
+    var parent2 = eventEl.parentNode.parentNode;
+    parent2.remove();
 }

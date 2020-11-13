@@ -2,67 +2,67 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="./index.js"></script>
-  <title>Document</title>
-  <style>
-    body {
-      padding: 20px;
-    }
-
-    .error {
-      color: red;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./index.js"></script>
+    <title>Document</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+        
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="row">
-    <div class="col-md-4 col-lg-4">
-      <form id="frmSubmit">
-        <div class="form-group">
-          <label for="fullname">Full Name:</label>
-          <input required name="fullname" type="text" class="form-control" placeholder="Enter FullName" id="fullname">
-          <span class="fullname-error error"></span>
-        </div>
-        <div class="form-group">
-          <label for="phone-number">Phone Number</label>
-          <input required name="phone-number" type="number" class="form-control" placeholder="Phone Number" id="phone-number">
-          <span class="fullnumber-error error"></span>
-        </div>
-        <div class="form-group">
-          <label for="address">Email Address:</label>
-          <input name="address" type="text" class="form-control" placeholder="Enter Dia chi" id="address">
-          <span class="address-error error"></span>
-        </div>
+    <div class="row">
+        <div class="col-md-4 col-lg-4">
+            <form id="frmSubmit">
+                <div class="form-group">
+                    <label for="fullname">Full Name:</label>
+                    <input required name="fullname" type="text" class="form-control" placeholder="Enter FullName" id="fullname">
+                    <span class="fullname-error error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="phone-number">Phone Number</label>
+                    <input required name="phone-number" type="number" class="form-control" placeholder="Phone Number" id="phone-number">
+                    <span class="fullnumber-error error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="address">Email Address:</label>
+                    <input name="address" type="text" class="form-control" placeholder="Enter Dia chi" id="address">
+                    <span class="address-error error"></span>
+                </div>
 
-        <input id="btnAdd" class="btn btn-primary btn-block" type="button" value=" Add " onclick="AddData(event)">
-        <input id='btnCancel' type="button" class="btn btn-secondary btn-block" value="Cancel">
-      </form>
-    </div>
-    <div class="col-md-8 col-lg-8">
-      <div class="form-group">
-        <label for="Search">Search</label>
-        <input name="search" type="search" class="form-control" onchange="searchInput()" placeholder="Search" id="search">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Firstname</th>
-            <th>Phonenumber</th>
-            <th>Email</th>
-            <th>Thao Tac</th>
-          </tr>
-        </thead>
-        <tbody id="tbodyToWrite">
-        </tbody>
-      </table>
-    </div>
-  </div>
+                <input id="btnAdd" class="btn btn-primary btn-block" type="button" value=" Add " onclick="AddData(event)">
+                <input id='btnCancel' type="button" class="btn btn-secondary btn-block" value="Cancel">
+            </form>
+        </div>
+        <div class="col-md-8 col-lg-8">
+            <div class="form-group">
+                <label for="Search">Search</label>
+                <input name="search" type="search" class="form-control" onchange="searchInput()" placeholder="Search" id="search">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Phonenumber</th>
+                            <th>Email</th>
+                            <th>Thao Tac</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyToWrite">
+                    </tbody>
+                </table>
+            </div>
+        </div>
 </body>
 
 </html>
