@@ -5,6 +5,7 @@ import SideBar from "./components/SideBar";
 import Products from "./components/Products/Products";
 import Cart from "./components/Carts/Cart";
 import { MyContext, productList } from "./MyContext";
+import Swal from "sweetalert2";
 
 class App extends Component {
   constructor(props) {
@@ -28,7 +29,6 @@ class App extends Component {
   };
 
   addToCart = (product) => {
-    console.log("Call Add To Cart");
     const idx = this.state.cart.findIndex((prod) => prod.id === product.id);
     if (idx < 0) {
       let _product = { ...product, quantity: 1 };
@@ -43,7 +43,45 @@ class App extends Component {
       });
     }
     // this.context.cart = [...this.context.cart, this.props.product];
-    // console.log(this.context);
+  };
+
+  filterProductByCat = (cat) => {
+    if (cat === "") {
+      this.setState({
+        filterList: [...this.state.products],
+      });
+      return;
+    }
+    let _filterList = this.state.products.filter(
+      (item) => item.category === cat
+    );
+    this.setState({
+      filterList: _filterList,
+    });
+  };
+
+  handleDecreaseProductQuantity = (e, id) => {
+    console.log(id);
+    Swal.fire({
+      title: "Do you want to delete the product with id: " + id,
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: `Delete`,
+      denyButtonText: `Nooooooo`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        let product = this.state.cart.find((el) => el.id === id);
+        let idx = this.state.cart.indexOf(product);
+        this.state.cart.splice(idx, 1);
+        this.setState({
+          cart: [...this.state.cart],
+        });
+        Swal.fire("Deleted!", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("Not Deleted", "", "info");
+      }
+    });
   };
 
   render() {
@@ -52,9 +90,11 @@ class App extends Component {
         value={{
           products: this.state.products,
           cart: this.state.cart,
+          filterList: this.state.filterList,
           handleChange: this.handleChange,
           addToCart: this.addToCart,
-          filterList: this.state.filterList,
+          handleDecreaseProductQuantity: this.handleDecreaseProductQuantity,
+          filterProductByCat: this.filterProductByCat,
         }}
       >
         <div className="App">

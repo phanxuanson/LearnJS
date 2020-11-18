@@ -11,9 +11,16 @@ class ProductList extends Component {
   }
 
   renderProductFromContext = () => {
-    const productArr = this.context.products.map((product) => {
-      return <ProductCard key={product.id} product={product}></ProductCard>;
-    });
+    let productArr = [];
+    if (this.context.filterList.length === 0) {
+      productArr = this.context.products.map((product) => {
+        return <ProductCard key={product.id} product={product}></ProductCard>;
+      });
+    } else {
+      productArr = this.context.filterList.map((product) => {
+        return <ProductCard key={product.id} product={product}></ProductCard>;
+      });
+    }
     return productArr;
   };
 
