@@ -3,14 +3,31 @@ import TodoItems from "./TodoItems";
 import { Todo } from "../context";
 
 export class Todolist extends Component {
+  static contextType = Todo;
+
   constructor(props) {
     super(props);
+    this.state = {};
+    console.log("Goi Contrusctor");
     //  this.deleteTodo = this.deleteTodo.bind(this);
   }
-  addTodo = (todo) => {
-    console.log(todo);
-  };
+
+  static getDerivedStateFromProps() {
+    console.log("Goi Ham Get Derived State");
+  }
+
+  componentDidMount() {
+    console.log("Goi CPN Did Mount");
+  }
+
+  componentDidUpdate() {
+    console.log("Goi CPN Did Update");
+  }
+
   render() {
+    console.log("Goi Render");
+    this.context.testContext("Hello World");
+
     let todoItemList = this.props.todoList.map((todo) => {
       return (
         <TodoItems
