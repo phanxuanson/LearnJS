@@ -2,9 +2,11 @@ import React, {Component} from 'react';
 import TodoInput from './components/TodoInput';
 import Todolist from './components/Todolist';
 import TodoItems from './components/TodoItems';
+import {Todo} from './context';
 
 
 class App extends Component {
+  static contextType = Todo;
     constructor(props){
         super(props)
         this.state = {
@@ -20,12 +22,23 @@ class App extends Component {
             ],
           };
     }
+    // addTodo = (todo) => {
+    //     let newTodo = {id:new Date().toString(), name: todo}
+    //     this.setState({
+    //         todoList: [...this.state.todoList, newTodo],
+    //     })
+    // };
     addTodo = (todo) => {
-        let newTodo = {id:new Date().toString(), name: todo}
-        this.setState({
-            todoList: [...this.state.todoList, newTodo],
-        })
-    };  
+        let maxId = Math.max.apply(
+          Math,
+          this.state.todoList.map((o) => {
+            return o.id;
+          })
+        );
+        let newTodo = { id: maxId + 1, name: todo };
+        this.setState({ todoList: [...this.state.todoList, newTodo] });
+      };
+        
     deleteTodo = (e, id) => {
         let idx = this.state.todoList.findIndex((todo) => todo.id === id);
         this.state.todoList.splice(idx,1);
@@ -34,6 +47,8 @@ class App extends Component {
         });
     }
     render(){
+      this.context.addTodo = this.addTodo;
+      
         return ( 
             <div className="container">
              <div className="row">

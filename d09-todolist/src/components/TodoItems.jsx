@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Todo } from "../context";
 export class TodoItems extends Component {
   render() {
     console.log(this.props);
