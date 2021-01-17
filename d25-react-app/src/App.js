@@ -3,9 +3,9 @@ import HomePage from "./page/HomePage";
 
 function App() {
   return (
-    <div>
+    <>
       <HomePage></HomePage>
-    </div>
+    </>
   ); // JSX
 }
 
