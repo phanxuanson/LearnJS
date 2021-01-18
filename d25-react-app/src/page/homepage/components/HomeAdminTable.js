@@ -1,38 +1,28 @@
 import React from "react";
+import HomeAntdTable from "./HomeAntdTable";
+import HomeAdminTabTable from "./HomeAdminTabTable";
+import { Tabs } from "antd";
+
+const { TabPane } = Tabs;
+
+function callback(key) {
+  console.log(key);
+}
 
 function HomeAdminTable() {
   return (
     <>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabs defaultActiveKey="1" onChange={callback}>
+        <TabPane tab="Table" key="1">
+          <HomeAdminTabTable></HomeAdminTabTable>
+        </TabPane>
+        <TabPane tab="Tab 2" key="2">
+          <HomeAntdTable></HomeAntdTable>
+        </TabPane>
+        <TabPane tab="Tab 3" key="3">
+          Content of Tab Pane 3
+        </TabPane>
+      </Tabs>
     </>
   );
 }

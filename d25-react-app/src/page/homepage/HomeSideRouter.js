@@ -4,6 +4,7 @@ import { Switch, Route, useRouteMatch } from "react-router-dom";
 import HomeSider from "./components/HomeSider";
 import HomeAdminInput from "./components/HomeAdminInput";
 import HomeAdminTable from "./components/HomeAdminTable";
+import HomeAntdTable from "./components/HomeAntdTable";
 
 const { Content } = Layout;
 
@@ -35,15 +36,19 @@ function HomeSideRouter(props) {
               <Route
                 path={`${path}/input`}
                 render={(props) => {
-                  console.log(props);
                   return <HomeAdminInput></HomeAdminInput>;
                 }}
               ></Route>
               <Route
                 path={`${path}/table`}
                 render={(props) => {
-                  console.log(props.location.testState);
                   return <HomeAdminTable></HomeAdminTable>;
+                }}
+              ></Route>
+              <Route
+                path={`${path}/antd-table`}
+                render={(props) => {
+                  return <HomeAntdTable></HomeAntdTable>;
                 }}
               ></Route>
             </Switch>

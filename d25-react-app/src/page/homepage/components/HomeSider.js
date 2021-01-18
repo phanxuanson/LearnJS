@@ -43,9 +43,8 @@ function HomeSider() {
           </Menu.Item>
           <Menu.Item key="3">
             {" "}
-            <Link to={`${path}/sider`}>Sider</Link>
+            <Link to={`${path}/antd-table`}>Antd Table</Link>
           </Menu.Item>
-          <Menu.Item key="4">option4</Menu.Item>
         </SubMenu>
       </Menu>
     </Sider>
