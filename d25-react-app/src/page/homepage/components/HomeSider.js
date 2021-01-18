@@ -7,7 +7,8 @@ const { SubMenu } = Menu;
 const { Sider } = Layout;
 
 function HomeSider() {
-  let match = useRouteMatch();
+  let { path } = useRouteMatch(); // useRouteMatch sẽ trả về 1 đối tượng
+
   const [mode, setMode] = useState("inline");
 
   function changeMode() {
@@ -22,20 +23,27 @@ function HomeSider() {
         defaultOpenKeys={["sub1"]}
         style={{ height: "100%" }}
       >
-        <SubMenu key="sub1" icon={<UserOutlined />} title="subnav 1">
+        <SubMenu key="sub1" icon={<UserOutlined />} title="Components">
           <Menu.Item key="1">
             {" "}
-            <Link to={`${match.url}/input`} exact>
+            <Link
+              to={{ pathname: `${path}/input`, testState: "Hieu Khung" }}
+              exact
+            >
               Input
             </Link>
           </Menu.Item>
           <Menu.Item key="2">
             {" "}
-            <Link to={`${match.url}/table`}>Table</Link>
+            <Link
+              to={{ pathname: `${path}/table`, testState: "Hieu Khung Table" }}
+            >
+              Table
+            </Link>
           </Menu.Item>
           <Menu.Item key="3">
             {" "}
-            <Link to={`${match.url}/sider`}>Sider</Link>
+            <Link to={`${path}/sider`}>Sider</Link>
           </Menu.Item>
           <Menu.Item key="4">option4</Menu.Item>
         </SubMenu>

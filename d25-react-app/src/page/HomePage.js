@@ -15,9 +15,8 @@ function HomePage(props) {
         <Route path="/" exact render={() => <div>Test</div>}></Route>
         <Route
           path="/admin"
-          render={(props) => <HomeSideRouter {...props}></HomeSideRouter>}
+          render={(props) => <HomeSideRouter {...props}></HomeSideRouter>} // {key: value, key: value1, key2: value2}
         ></Route>
-
         <Redirect to="/admin"></Redirect>
       </Switch>
       <HomeFooter></HomeFooter>

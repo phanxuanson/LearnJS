@@ -1,16 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom"; // alias
 import { createBrowserHistory } from "history";
 
 const hist = createBrowserHistory();
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter history={hist}>
+    <Router history={hist}>
       <App />
-    </BrowserRouter>
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -370,3 +370,7 @@ git reset --hard HEAD~1
 # reset ve head với tên cụ thể
 git reset --hard HEAD@{1}
 ```
+
+## DAY 09 - REACT ROUTER
+
+- Object Destructure: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment>
