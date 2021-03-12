@@ -60,51 +60,67 @@ h6 {
 .text-faded {
   color: rgba(255, 255, 255, 0.7);
 }
-
-@media (max-width: 992px) {
-  .map {
-    height: 75%;
-  }
+.card-carousel {
+  padding-top: 70px;
+}
+.card-title {
+  margin: 0 0 10px;
+  color: #aaa;
+  font-size: 13px;
+  text-overflow: clip;
+}
+.card-text {
+  margin: 0 0 15px;
+  padding: 0 0 19px;
+  font-size: 15px;
+  line-height: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  text-overflow: clip;
+}
+.card__main {
+  padding: 10px !important;
 }
 
-.map iframe {
-  pointer-events: none;
-}
-
-.portfolio-item {
-  display: block;
-  position: relative;
-  overflow: hidden;
-  max-width: 530px;
-  margin: auto auto 1rem;
-}
-
-.portfolio-item .caption {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  background-color: rgb(33 37 41 / 43%);
+/* Style Stars Rating   */
+.stars input {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: 1;
+  left: -999999px;
+}
+.stars a {
+  display: inline-block;
+  padding-right: 4px;
+  text-decoration: none;
+  margin: 0;
 }
 
-.portfolio-item .caption .caption-content {
-  color: #fff;
-  margin: auto 2rem 2rem;
+.stars a:after {
+  position: relative;
+  font-size: 18px;
+  font-family: "FontAwesome", serif;
+  display: block;
+  content: "\f005";
+  color: #dacece;
 }
 
-.portfolio-item .caption .caption-content h2 {
-  font-size: 0.8rem;
-  text-transform: uppercase;
+span {
+  font-size: 0; /* trick to remove inline-element's margin */
 }
 
-.portfolio-item .caption .caption-content p {
-  font-weight: 300;
-  font-size: 1.2rem;
+.stars a:hover ~ a:after {
+  color: #dacece !important;
+}
+span.active a.active ~ a:after {
+  color: #dacece;
 }
 
+span:hover a:after {
+  color: #ffff3f !important;
+}
+
+span.active a:after,
+.stars a.active:after {
+  color: #ffff3f;
+}
 @media (min-width: 992px) {
   .portfolio-item {
     max-width: none;
